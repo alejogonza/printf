@@ -4,7 +4,7 @@
 
 ## Description
 
-This repository contains a version of printf in c language, which maintains the main functions of this basic function. This project is a project requested by Holberton School
+This repository contains a version of printf in c language, which maintains the main functions of this basic function. This project is a project requested by [Holberton School](https://www.holbertonschool.com/)
 
 
 ## Prerequisites 📋
