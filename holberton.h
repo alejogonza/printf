@@ -1,6 +1,10 @@
-#ifndef HOLBERTON_H_
-#define HOLBERTON_H_
+#ifndef MY_PRINTF
+#define MY_PRINTF
 
-int _putchar(char c)
+int _printf(const char *format, ...);
 
-#endif
+int _putchar(char c);
+
+int p_char(va_list arg);
+
+#endif /* MY_PRINTF */
