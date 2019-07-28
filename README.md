@@ -58,7 +58,6 @@ The following conversion operators are available:
 
 - **%** = percentage signs
 
-
 ## Running the tests ⚙️
 
 
