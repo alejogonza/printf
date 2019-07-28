@@ -26,6 +26,25 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.`
 
 [Follow the platzi tutorial](https://platzi.com/tutoriales/1469-algoritmos/1901-como-instalar-gcc-para-compilar-programas-en-c-desde-la-consola-en-windows/)
 
+### preparation 🔧
+
+_A series of step-by-step examples that tell you what you need to run to have a development environment running_
+
+_ Tell me how that step will be_
+
+``
+Give an example
+``
+
+_And repeat_
+
+``
+to finish
+``
+
+_ Finish with an example of how to obtain system data or how to use it for a small demo_
+
+
 ## Running the tests ⚙️
 
 
