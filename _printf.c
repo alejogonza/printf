@@ -9,7 +9,7 @@ int printf(const char *format, ...)
 		{'\0', NULL}
 	}
 
-	int i, j;
+	int i, j, count;
 
 	va_list arg;
 
