@@ -1,14 +1,10 @@
-#ifndef HOLBERTON_H_
-#define HOLBERTON_H_
-#include <stdarg.h>
+#ifndef MY_PRINTF
+#define MY_PRINTF
 
-typedef struct pf
-{
-	char a;
-	void (*f)(va_list);
-} st;
+int _printf(const char *format, ...);
 
 int _putchar(char c);
-int printf(const char *format, ...);
 
-#endif
+int p_char(va_list arg);
+
+#endif /* MY_PRINTF */
