@@ -9,7 +9,7 @@ int printf(const char *format, ...)
 		{'\0', NULL}
 	}
 
-	int i, j;
+	int i, j, count;
 
 	va_list arg;
 
@@ -31,6 +31,12 @@ int printf(const char *format, ...)
 				{
 					_putchar(va_arg(arg, char));
 					i += 2;
+				}
+				else if (format[i + 1] == '%')
+				{
+					_putchar(format[i + 1]);
+					i += 2;
+					break;
 				}
 			}
 		}
