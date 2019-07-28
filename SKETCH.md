@@ -1,0 +1,2 @@
+Define the formats specifications as the character "%c" and the string "%s". To this process we used the system call "write" of <unistd.h> library and create the "_puthchar.c" function used to write a character on stdout. Then we created a variadic prototype function "_printf(const char *format, ...);" where we used the next logic:
+*
