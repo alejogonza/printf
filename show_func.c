@@ -3,8 +3,7 @@
 #include "holberton.h"
 
 /**
- * fnchar - entry point
- * Description: argument for character (c)
+ * fnchar - argument for character (c)
  * @arg: char to print
  * Return: Always 0 (Success)
  */
@@ -16,25 +15,47 @@ int fnchar(va_list arg)
 
 	_putchar(c);
 
-	return (0);
+	return (1);
 }
 
 /**
- * fnstring - entry point
- * Description: argument for string (s)
+ * fnstring - argument for string (s)
  * @arg: argument
  * Return: count
  */
 int fnstring(va_list arg)
 {
-	int i, count = -1;
+	int i, count = 0;
 
 	char *s;
 
 	s = va_arg(arg, char*);
 
 	if (s == NULL)
+	{
 		s = "(null)";
+		count = 0;
+	}
+
+	for (i = 0; s[i] != '\0' && s != NULL; i++)
+	{
+		_putchar(s[i]);
+		count++;
+	}
+
+	return (count);
+}
+
+/**
+ * fnsucc - Function that prints "Success"
+ * @arg: argument
+ * Return: count
+ */
+int fnsucc(__attribute__((unused)) va_list arg)
+{
+	int i, count = 0;
+
+	char *s = "Success";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
