@@ -17,7 +17,7 @@ int (*fnstruct(char format))(va_list)
 		{'m', fnsucc},
 		{'d', fnint},
 		{'i', fnint},
-		{'\0', NULL}
+		{'\0', fnerror}
 	};
 
 	for (i = 0; arr[i].a != '\0'; i++)
@@ -26,7 +26,7 @@ int (*fnstruct(char format))(va_list)
 			return (arr[i].f);
 	}
 
-	return (NULL);
+	return (fnerror);
 }
 
 /**
@@ -55,7 +55,15 @@ int _printf(const char *format, ...)
 				_putchar('%'), i++;
 			}
 			else
-				count += fnstruct(format[i + 1])(arg), i++;
+			{
+				count += fnstruct(format[i + 1])(arg);
+				if (count == -1 && format[i + 2] != '\0')
+				{
+					_putchar('%');
+					count += 2;
+				}
+				i++;
+			}
 		}
 		else
 			_putchar(format[i]), count++;
