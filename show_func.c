@@ -88,7 +88,7 @@ int fnint(va_list arg)
 	while (count > 0)
 	{
 		_putchar(((s / count) % 10) + 48);
-	        count /= 10;
+		count /= 10;
 		i++;
 	}
 
