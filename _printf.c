@@ -1,36 +1,39 @@
 #include "holberton.h"
 #include <stdarg.h>
+#include <stdlib.h>
 
-int printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	st arr[] = {
 		{'c', fnchar},
 		{'s', fnstring},
 		{'\0', NULL}
-	}
+	};
 
-	int i, j, count;
+	int i, j, x, count = 0;
 
 	va_list arg;
 
 	va_start(arg, format);
 
-        for (i = 0; format && format[i] != '\0'; i++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; st[j].a != '\0'; j++)
+			for (j = 0; arr[j].a != '\0'; j++)
 			{
-				if (format[i + 1] == st[j].a)
+				if (format[i + 1] == arr[j].a)
 				{
-					st[j].f;
+					x = arr[j].f(arg);
+					count += x;
 					i += 2;
 					break;
 				}
-				else if (st[j + 1].a == '\0')
+				else if (arr[j + 1].a == '\0')
 				{
-					_putchar(va_arg(arg, char));
+					_putchar(format[i]);
 					i += 2;
+					break;
 				}
 				else if (format[i + 1] == '%')
 				{
@@ -39,11 +42,13 @@ int printf(const char *format, ...)
 					break;
 				}
 			}
+			count++;
 		}
-		_putchar(va_arg(arg, char));
+		_putchar(format[i]);
+		count++;
 	}
 
 	va_end(arg);
 
-	return (0);
+	return (count);
 }
