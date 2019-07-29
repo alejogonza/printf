@@ -3,19 +3,34 @@
 #include "holberton.h"
 
 /**
- * p_char - entry point
+ * fnchar - entry point
  * Description: argument for character (c)
  * @arg: char to print
- * Return: num of chars
+ * Return: Always 0 (Success)
  */
-
-int p_char(va_list arg)
+int fnchar(va_list arg)
 {
 	char c;
+	c = (char)va_arg(arg, int);
+	_putchar(c);
 
-	c = va_arg(arg, int);
+	return (0);
+}
 
-		_putchar(c);
+int fnstring(va_list arg)
+{
+	int i, count = -1;
+	char *s;
+	s = va_arg(arg, char*);
 
-	return (1);
+	if (s == '\0')
+		s = "(null)";
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+			_putchar(s[i]);
+		        count++;
+	}
+
+	return (count);
 }
