@@ -20,5 +20,6 @@ int _putchar(char c);
 int fnchar(va_list arg);
 int fnstring(va_list arg);
 int fnsucc(va_list arg);
+int fnint(va_list arg);
 
 #endif /* MY_PRINTF */
