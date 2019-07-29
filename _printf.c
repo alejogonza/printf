@@ -10,6 +10,8 @@ int (*fnstruct(char format))(va_list)
 		{'c', fnchar},
 		{'s', fnstring},
 		{'m', fnsucc},
+		{'d', fnint},
+		{'i', fnint},
 		{'\0', NULL}
 	};
 
@@ -38,7 +40,9 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '%')
+			if (format[i + 1] == '\0')
+				return (-1); 
+			else if (format[i + 1] == '%')
 			{
 				_putchar('%'), i++;
 			}
