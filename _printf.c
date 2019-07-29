@@ -2,6 +2,12 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+/**
+ * _printf - entry point
+ * Description: struct for conversion specifiers
+ * @format: format of char
+ * Return: length of byte
+ */
 int _printf(const char *format, ...)
 {
 	st arr[] = {
@@ -9,13 +15,10 @@ int _printf(const char *format, ...)
 		{'s', fnstring},
 		{'\0', NULL}
 	};
-
 	int i, j, x, count = 0;
-
 	va_list arg;
 
 	va_start(arg, format);
-
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -25,8 +28,7 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == arr[j].a)
 				{
 					x = arr[j].f(arg);
-					count += x;
-					i += 2;
+					count += x, i += 2;
 					break;
 				}
 				else if (arr[j + 1].a == '\0')
@@ -44,11 +46,8 @@ int _printf(const char *format, ...)
 			}
 			count++;
 		}
-		_putchar(format[i]);
-		count++;
+		_putchar(format[i]), count++;
 	}
-
 	va_end(arg);
-
 	return (count);
 }

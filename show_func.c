@@ -11,25 +11,35 @@
 int fnchar(va_list arg)
 {
 	char c;
+
 	c = (char)va_arg(arg, int);
+
 	_putchar(c);
 
 	return (0);
 }
 
+/**
+ * fnstring - entry point
+ * Description: argument for string (s)
+ * @arg: argument
+ * Return: count
+ */
 int fnstring(va_list arg)
 {
 	int i, count = -1;
+
 	char *s;
+
 	s = va_arg(arg, char*);
 
-	if (s == '\0')
+	if (s == NULL)
 		s = "(null)";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-			_putchar(s[i]);
-		        count++;
+		_putchar(s[i]);
+		count++;
 	}
 
 	return (count);

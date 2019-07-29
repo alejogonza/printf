@@ -2,6 +2,13 @@
 #define MY_PRINTF
 #include <stdarg.h>
 
+/**
+ * struct pf - entry point
+ * Description: struct for conversion
+ * @a: char
+ * @f: format
+ */
+
 typedef struct pf
 {
 	char a;
