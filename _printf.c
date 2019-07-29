@@ -2,6 +2,26 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+int (*fnstruct(char format))(va_list)
+{
+        int i;
+
+	st arr[] = {
+		{'c', fnchar},
+		{'s', fnstring},
+		{'m', fnsucc},
+		{'\0', NULL}
+	};
+
+	for (i = 0; arr[i].a != '\0'; i++)
+	{
+		if (format == arr[i].a)
+			return (arr[i].f);
+	}
+
+	return (NULL);
+}
+
 /**
  * _printf - entry point
  * Description: struct for conversion specifiers
@@ -10,12 +30,7 @@
  */
 int _printf(const char *format, ...)
 {
-	st arr[] = {
-		{'c', fnchar},
-		{'s', fnstring},
-		{'\0', NULL}
-	};
-	int i, j, x, count = 0;
+	int i, count = 0;
 	va_list arg;
 
 	va_start(arg, format);
@@ -23,30 +38,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; arr[j].a != '\0'; j++)
+			if (format[i + 1] == '%')
 			{
-				if (format[i + 1] == arr[j].a)
-				{
-					x = arr[j].f(arg);
-					count += x, i += 2;
-					break;
-				}
-				else if (arr[j + 1].a == '\0')
-				{
-					_putchar(format[i]);
-					i += 2;
-					break;
-				}
-				else if (format[i + 1] == '%')
-				{
-					_putchar(format[i + 1]);
-					i += 2;
-					break;
-				}
+				_putchar('%'), i++;
 			}
-			count++;
+			else
+				count += fnstruct(format[i + 1])(arg), i++;
 		}
-		_putchar(format[i]), count++;
+		else
+			_putchar(format[i]), count++;
 	}
 	va_end(arg);
 	return (count);
