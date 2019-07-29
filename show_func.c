@@ -94,3 +94,8 @@ int fnint(va_list arg)
 
 	return (i);
 }
+
+int fnerror(__attribute__((unused)) va_list arg)
+{
+	return (-1);
+}
