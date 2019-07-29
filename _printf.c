@@ -2,9 +2,14 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+/**
+ * fnstruct - Function pointer that return a function
+ * @format: format of char
+ * Return: integer
+ */
 int (*fnstruct(char format))(va_list)
 {
-        int i;
+	int i;
 
 	st arr[] = {
 		{'c', fnchar},
@@ -35,13 +40,16 @@ int _printf(const char *format, ...)
 	int i, count = 0;
 	va_list arg;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(arg, format);
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-				return (-1); 
+				return (-1);
 			else if (format[i + 1] == '%')
 			{
 				_putchar('%'), i++;
