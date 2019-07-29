@@ -7,4 +7,4 @@ int _putchar(char c);
 
 int p_char(va_list arg);
 
-#endif /* MY_PRINTF */
+#endif /*MY_PRINTF*/
