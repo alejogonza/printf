@@ -65,3 +65,32 @@ int fnsucc(__attribute__((unused)) va_list arg)
 
 	return (count);
 }
+
+int fnint(va_list arg)
+{
+	int i = 0, j, s, count = 1;
+
+	s = va_arg(arg, int);
+	j = s;
+
+	if (s < 0)
+	{
+		s *= -1, j *= -1;
+		_putchar('-');
+	}
+
+	while (j > 0)
+	{
+		j /= 10;
+		count *= 10;
+	}
+	count /= 10;
+	while (count > 0)
+	{
+		_putchar(((s / count) % 10) + 48);
+	        count /= 10;
+		i++;
+	}
+
+	return (i);
+}
