@@ -5,12 +5,12 @@
 typedef struct pf
 {
 	char a;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } st;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void fnchar(va_list arg);
-void fnstring(va_list arg);
+int fnchar(va_list arg);
+int fnstring(va_list arg);
 
 #endif /* MY_PRINTF */
