@@ -1,12 +1,13 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdlib.h>
-
 /**
- * fnstruct - Function pointer that return a function
- * @format: format of char
- * Return: integer
+ * fnstruct - entry point
+ * Description: struct for printf
+ * @format: formats
+ * Return: null
  */
+
 int (*fnstruct(char format))(va_list)
 {
 	int i;
@@ -15,10 +16,7 @@ int (*fnstruct(char format))(va_list)
 		{'c', fnchar},
 		{'s', fnstring},
 		{'m', fnsucc},
-		{'d', fnint},
-		{'i', fnint},
-		{'b', fnbin},
-		{'\0', fnerror}
+		{'\0', NULL}
 	};
 
 	for (i = 0; arr[i].a != '\0'; i++)
@@ -27,7 +25,7 @@ int (*fnstruct(char format))(va_list)
 			return (arr[i].f);
 	}
 
-	return (fnerror);
+	return (NULL);
 }
 
 /**
@@ -38,35 +36,20 @@ int (*fnstruct(char format))(va_list)
  */
 int _printf(const char *format, ...)
 {
-	long int i, count = 0;
+	int i, count = 0;
 	va_list arg;
-
-	if (format == NULL)
-		return (-1);
 
 	va_start(arg, format);
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-				return (-1);
-			else if (format[i + 1] == '%')
+			if (format[i + 1] == '%')
 			{
-				_putchar('%'), i++, count++;
+				_putchar('%'), i++;
 			}
 			else
-			{
-				count += fnstruct(format[i + 1])(arg);
-				i++;
-
-				if (count == -1)
-				{
-					_putchar('%');
-					_putchar(format[i]);
-					count = 2;
-				}
-			}
+				count += fnstruct(format[i + 1])(arg), i++;
 		}
 		else
 			_putchar(format[i]), count++;
