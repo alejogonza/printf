@@ -60,7 +60,7 @@ If successful, this function returns the number of characters assigned to it wit
 printf(3)
 .br
 .SH BUGS
-No known bugs.
+No known bugs, if you find any report it to 949@holbertonschool.com
 .br
 .SH AUTHOR
 Alejandro Gonzalez Serna, Hugo Vargas.
