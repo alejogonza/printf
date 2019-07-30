@@ -25,7 +25,7 @@ int fnchar(va_list arg)
  */
 int fnstring(va_list arg)
 {
-	int i, count = 0;
+        int i, count = 0;
 
 	char *s;
 
@@ -68,14 +68,15 @@ int fnsucc(__attribute__((unused)) va_list arg)
 
 int fnint(va_list arg)
 {
-	int i = 0, j, s, count = 1;
+        long int s;
+	unsigned int i = 0, j, k, count = 1;
 
 	s = va_arg(arg, int);
 	j = s;
 
 	if (s < 0)
 	{
-		s *= -1, j *= -1;
+		j = s * -1;
 		_putchar('-');
 		i++;
 	}
@@ -84,7 +85,9 @@ int fnint(va_list arg)
 		i++;
 		_putchar('0');
 	}
-
+	else
+		j = s;
+	k = j;
 	while (j > 0)
 	{
 		j /= 10;
@@ -93,7 +96,7 @@ int fnint(va_list arg)
 	count /= 10;
 	while (count > 0)
 	{
-		_putchar(((s / count) % 10) + 48);
+		_putchar(((k / count) % 10) + 48);
 		count /= 10;
 		i++;
 	}
