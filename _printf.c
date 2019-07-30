@@ -1,10 +1,16 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdlib.h>
+/**
+ * fnstruct - entry point
+ * Description: struct for printf
+ * @format: formats
+ * Return: null
+ */
 
 int (*fnstruct(char format))(va_list)
 {
-        int i;
+	int i;
 
 	st arr[] = {
 		{'c', fnchar},
