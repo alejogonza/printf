@@ -58,10 +58,10 @@ and you will see all the possibilities you can do with _printf.
 
 <p align="center"><img src="https://i.ibb.co/6NcnNJJ/Diagrama-en-blanco.png" alt="printf pse"></a></p>
 <br>
-<h4 align="center">Vesion 1</h4>
+<h4 align="center">Version 1</h4>
 <p align="center"><img src="https://i.ibb.co/F7WD9DB/Whats-App-Image-2019-07-30-at-5-05-30-PM.jpg" alt="printf v1"></a></p>
 <br>
-<h4 align="center">Vesion 2</h4>
+<h4 align="center">Version 2</h4>
 <p align="center"><img src="https://i.ibb.co/yRLVZpW/Whats-App-Image-2019-07-30-at-5-05-29-PM.jpg" alt="printf v2"></a></p>
 
 ## Authors :copyright:
