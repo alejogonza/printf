@@ -38,7 +38,7 @@ int (*fnstruct(char format))(va_list)
  */
 int _printf(const char *format, ...)
 {
-	int i, count = 0;
+	long int i, count = 0;
 	va_list arg;
 
 	if (format == NULL)
