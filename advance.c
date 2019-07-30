@@ -4,7 +4,7 @@
 
 int fnbin(va_list arg)
 {
-	int i, j, n, count = 0;
+	unsigned int i, j, n, count = 0;
 
 	unsigned int arr[100];
 
@@ -22,14 +22,14 @@ int fnbin(va_list arg)
 		n /= 2;
 	}
 
-//	arr[i] = n % 2;
+	arr[i] = n % 2;
 
-	for (j = i - 1; j >= 0; j--)
+	for (j = i - 1; j > 0; j--)
 	{
 		_putchar(arr[j] + 48);
 		count++;
 	}
-//	_putchar(arr[j] + 48);
+	_putchar(arr[j] + 48);
 
 	return (count);
 }
