@@ -95,6 +95,19 @@ int fnint(va_list arg)
 	return (i);
 }
 
+int fnvoid(va_list arg)
+{
+	char c;
+
+	c = (char)va_arg(arg, int);
+
+	_putchar('%');
+
+	_putchar(c);
+
+	return (2);
+}
+
 int fnerror(__attribute__((unused)) va_list arg)
 {
 	return (-1);
