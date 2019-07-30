@@ -2,6 +2,11 @@
 #include <stdarg.h>
 #include "holberton.h"
 
+/**
+ * fnbin - binary output
+ * @arg: argument
+ * Return: length
+ */
 int fnbin(va_list arg)
 {
 	unsigned int i, j, n, count = 0;
