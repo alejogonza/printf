@@ -74,7 +74,7 @@ int fnsucc(__attribute__((unused)) va_list arg)
 int fnint(va_list arg)
 {
 	long int s;
-	unsigned int i = 0, j, k, count = 1;
+	long int i = 0, j, k, count = 1;
 
 	s = va_arg(arg, int);
 
@@ -86,8 +86,8 @@ int fnint(va_list arg)
 	}
 	else if (s == 0)
 	{
-		i++;
 		_putchar('0');
+		return (1);
 	}
 	else
 		j = s;
