@@ -52,17 +52,19 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (format[i + 1] == '%')
 			{
-				_putchar('%'), i++;
+				_putchar('%'), i++, count++;
 			}
 			else
 			{
 				count += fnstruct(format[i + 1])(arg);
-				if (count == -1 && format[i + 2] != '\0')
+				i++;
+
+				if (count == -1)
 				{
 					_putchar('%');
-					count += 2;
+					_putchar(format[i]);
+					count = 2;
 				}
-				i++;
 			}
 		}
 		else
