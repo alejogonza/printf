@@ -17,6 +17,7 @@ int (*fnstruct(char format))(va_list)
 		{'m', fnsucc},
 		{'d', fnint},
 		{'i', fnint},
+		{'b', fnbin},
 		{'\0', fnerror}
 	};
 
