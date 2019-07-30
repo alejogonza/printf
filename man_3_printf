@@ -29,6 +29,9 @@ If a format is of type integral it identifies it and it recieves it as a integra
 .BR %d
 If a format is of type decimal it identifies it and it recieves it as a decimal.
 .TP
+.BR %b
+If a format is of type binary it identifies it and it recieves it as a binary.
+.TP
 .SH EXAMPLE
 .RS 3
 Print a string using %s:
