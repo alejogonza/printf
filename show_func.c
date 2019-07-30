@@ -77,6 +77,12 @@ int fnint(va_list arg)
 	{
 		s *= -1, j *= -1;
 		_putchar('-');
+		i++;
+	}
+	else if (s == 0)
+	{
+		i++;
+		_putchar('0');
 	}
 
 	while (j > 0)
@@ -94,7 +100,7 @@ int fnint(va_list arg)
 
 	return (i);
 }
-
+/*
 int fnvoid(va_list arg)
 {
 	char c;
@@ -107,7 +113,7 @@ int fnvoid(va_list arg)
 
 	return (2);
 }
-
+*/
 int fnerror(__attribute__((unused)) va_list arg)
 {
 	return (-1);
