@@ -30,6 +30,7 @@ int fnbin(va_list arg)
 			_putchar(arr[j] + 48);
 			count++;
 		}
+		count++;
 		_putchar(arr[j] + 48);
 	}
 	return (count);
