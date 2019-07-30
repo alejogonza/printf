@@ -68,11 +68,10 @@ int fnsucc(__attribute__((unused)) va_list arg)
 
 int fnint(va_list arg)
 {
-        long int s;
+	long int s;
 	unsigned int i = 0, j, k, count = 1;
 
 	s = va_arg(arg, int);
-	j = s;
 
 	if (s < 0)
 	{
@@ -88,12 +87,11 @@ int fnint(va_list arg)
 	else
 		j = s;
 	k = j;
-	while (j > 0)
+	while (j > 9)
 	{
 		j /= 10;
 		count *= 10;
 	}
-	count /= 10;
 	while (count > 0)
 	{
 		_putchar(((k / count) % 10) + 48);
