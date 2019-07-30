@@ -26,23 +26,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.`
 
 [Follow the platzi tutorial](https://platzi.com/tutoriales/1469-algoritmos/1901-como-instalar-gcc-para-compilar-programas-en-c-desde-la-consola-en-windows/)
 
-### Preparation 🔧
-
-_A series of step-by-step examples that tell you what you need to run to have a development environment running_
-
-_ Tell me how that step will be_
-
-``
-Give an example
-``
-
-_And repeat_
-
-``
-to finish
-``
-
-_ Finish with an example of how to obtain system data or how to use it for a small demo_
 
 ### Options :mag_right:
 
@@ -58,15 +41,28 @@ The following conversion operators are available:
 
 - **%** = percentage signs
 
+- **b** = binary
+
 ## Running the tests ⚙️
 
+When you have already cloned the repository, run this command:
 
+`$ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c`
+
+and you will see all the possibilities you can do with _printf.
 
 
 ## The pseudocode :pencil:
 
+<h4 align="center">Flowchart</h4>
 
-
+<p align="center"><img src="https://i.ibb.co/6NcnNJJ/Diagrama-en-blanco.png" alt="printf pse"></a></p>
+<br>
+<h4 align="center">Vesion 1</h4>
+<p align="center"><img src="https://i.ibb.co/F7WD9DB/Whats-App-Image-2019-07-30-at-5-05-30-PM.jpg" alt="printf v1"></a></p>
+<br>
+<h4 align="center">Vesion 2</h4>
+<p align="center"><img src="https://i.ibb.co/yRLVZpW/Whats-App-Image-2019-07-30-at-5-05-29-PM.jpg" alt="printf v2"></a></p>
 
 ## Authors :copyright:
 
