@@ -8,7 +8,7 @@ int fnbin(va_list arg)
 
 	unsigned int arr[100];
 
-	n = va_arg(arg, unsigned int);
+	n = va_arg(arg, int);
 
 	if (n == 0)
 	{
