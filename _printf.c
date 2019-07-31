@@ -24,15 +24,15 @@ int (*fnstruct(char format))(va_list)
 		{'d', fnint},
 		{'i', fnint},
 		{'b', fnbin},
-		{'R', fnrot},
+	        {'o', fnoct},
 		{'\0', fnerror}
 	};
 
 	for (i = 0; arr[i].a != '\0'; i++)
-	{
+		{
 		if (format == arr[i].a)
-			return (arr[i].f);
-	}
+		return (arr[i].f);
+		}
 
 	return (fnerror);
 }

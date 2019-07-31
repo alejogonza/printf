@@ -25,7 +25,7 @@ int fnchar(va_list arg)
  */
 int fnstring(va_list arg)
 {
-        int i, count = 0;
+	int i, count = 0;
 
 	char *s;
 
@@ -65,14 +65,18 @@ int fnsucc(__attribute__((unused)) va_list arg)
 
 	return (count);
 }
+/**
+ * fnint - argument for int
+ * @arg: argument
+ * Return: count
+ */
 
 int fnint(va_list arg)
 {
-        long int s;
-	unsigned int i = 0, j, k, count = 1;
+	long int s;
+	long int i = 0, j, k, count = 1;
 
 	s = va_arg(arg, int);
-	j = s;
 
 	if (s < 0)
 	{
@@ -82,18 +86,17 @@ int fnint(va_list arg)
 	}
 	else if (s == 0)
 	{
-		i++;
 		_putchar('0');
+		return (1);
 	}
 	else
 		j = s;
 	k = j;
-	while (j > 0)
+	while (j > 9)
 	{
 		j /= 10;
 		count *= 10;
 	}
-	count /= 10;
 	while (count > 0)
 	{
 		_putchar(((k / count) % 10) + 48);
@@ -103,20 +106,12 @@ int fnint(va_list arg)
 
 	return (i);
 }
-/*
-int fnvoid(va_list arg)
-{
-	char c;
 
-	c = (char)va_arg(arg, int);
-
-	_putchar('%');
-
-	_putchar(c);
-
-	return (2);
-}
-*/
+/**
+ * fnerror - Function that prints "error"
+ * @arg: argument
+ * Return: count
+ */
 int fnerror(__attribute__((unused)) va_list arg)
 {
 	return (-1);
