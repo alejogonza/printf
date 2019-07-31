@@ -43,13 +43,13 @@ int fnrot(va_list arg)
 		{
 			if (c[i] == a[j])
 			{
-			        putchar(b[j]);
+			        _putchar(b[j]);
 				bool = 1;
 				break;
 			}
 		}
 		if (bool != 1)
-			putchar(c[i]);
+			_putchar(c[i]);
 		count++;
 	}
 

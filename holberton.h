@@ -24,5 +24,6 @@ int fnint(va_list arg);
 int fnerror(va_list arg);
 int fnvoid(va_list arg);
 int fnbin(va_list arg);
+int fnrot(va_list arg);
 
 #endif /* MY_PRINTF */
