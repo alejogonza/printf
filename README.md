@@ -55,6 +55,11 @@ And run this command:
 
 and you will see all the possibilities you can do with _printf.
 
+## Example :boom:
+
+`_printf("%s %s %s\\n", "hey", "i", "work!");`
+
+`Output : "hey i work!"`
 
 ## The pseudocode :pencil:
 
