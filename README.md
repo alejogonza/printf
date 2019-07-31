@@ -47,7 +47,7 @@ The following conversion operators are available:
 
 When you have already cloned the repository, create this main.c:
 
-[main.c](https://github.com/alejogonza/printf/blob/alejo/main.c)
+[main.c](https://github.com/alejogonza/printf/blob/alejo/test/main.c)
 
 And run this command:
 
