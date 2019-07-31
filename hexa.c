@@ -8,20 +8,36 @@
  * Return: 0
  */
 
-int hexadec(va_list hexvaric)
+int fnbin(va_list arg)
 {
-	int num1, num2, temp, conv[100];
-	unsigned int count;
+	unsigned int i, j, n, count = 0;
 
-	count = va_arg(hexvaric, unsigned int);
-	temp = 0;
-	num = 0;
+	unsigned int arr[100];
 
-	if ( count == 0)
+	n = va_arg(arg, int);
+
+	if (n < 1)
 	{
-	 _putchar('0');
-	return 
+		_putchar('0');
+		return (1);
 	}
-	
+	else
+	{
+		for (i = 0; n > 0; i++)
+		{
+			arr[i] = n % 8;
+			n /= 8;
+		}
 
+		arr[i] = n % 8;
+
+		for (j = i - 1; j > 0; j--)
+		{
+			_putchar(arr[j] + 48);
+			count++;
+		}
+		count++;
+		_putchar(arr[j] + 48);
+	}
+	return (count);
 }
