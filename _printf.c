@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdlib.h>
-
 /**
  * fnstruct - Function pointer that return a function
  * @format: format of char
@@ -22,10 +21,10 @@ int (*fnstruct(char format))(va_list)
 	};
 
 	for (i = 0; arr[i].a != '\0'; i++)
-		{
+	{
 		if (format == arr[i].a)
-		return (arr[i].f);
-		}
+			return (arr[i].f);
+	}
 
 	return (fnerror);
 }
