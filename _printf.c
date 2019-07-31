@@ -1,54 +1,83 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdlib.h>
+/**
+ * fnstruct - entry point
+ * Description: struct for printf
+ * @format: formats
+ * Return: null
+ */
 
-int _printf(const char *format, ...)
+/**
+ * fnstruct - Function pointer that return a function
+ * @format: format of char
+ * Return: integer
+ */
+int (*fnstruct(char format))(va_list)
 {
+	int i;
+
 	st arr[] = {
 		{'c', fnchar},
 		{'s', fnstring},
-		{'\0', NULL}
+		{'m', fnsucc},
+		{'d', fnint},
+		{'i', fnint},
+		{'b', fnbin},
+		{'R', fnrot},
+		{'\0', fnerror}
 	};
 
-	int i, j, x, count = 0;
+	for (i = 0; arr[i].a != '\0'; i++)
+	{
+		if (format == arr[i].a)
+			return (arr[i].f);
+	}
 
+	return (fnerror);
+}
+
+/**
+ * _printf - entry point
+ * Description: struct for conversion specifiers
+ * @format: format of char
+ * Return: length of byte
+ */
+int _printf(const char *format, ...)
+{
+	long int i, count = 0;
 	va_list arg;
 
-	va_start(arg, format);
+	if (format == NULL)
+		return (-1);
 
+	va_start(arg, format);
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; arr[j].a != '\0'; j++)
+			if (format[i + 1] == '\0')
+				return (-1);
+			else if (format[i + 1] == '%')
 			{
-				if (format[i + 1] == arr[j].a)
+				_putchar('%'), i++, count++;
+			}
+			else
+			{
+				count += fnstruct(format[i + 1])(arg);
+				i++;
+
+				if (count == -1)
 				{
-					x = arr[j].f(arg);
-					count += x;
-					i += 2;
-					break;
-				}
-				else if (arr[j + 1].a == '\0')
-				{
+					_putchar('%');
 					_putchar(format[i]);
-					i += 2;
-					break;
-				}
-				else if (format[i + 1] == '%')
-				{
-					_putchar(format[i + 1]);
-					i += 2;
-					break;
+					count = 2;
 				}
 			}
-			count++;
 		}
-		_putchar(format[i]);
-		count++;
+		else
+			_putchar(format[i]), count++;
 	}
-
 	va_end(arg);
-
 	return (count);
 }

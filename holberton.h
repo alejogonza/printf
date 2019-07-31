@@ -2,6 +2,13 @@
 #define MY_PRINTF
 #include <stdarg.h>
 
+/**
+ * struct pf - entry point
+ * Description: struct for conversion
+ * @a: char
+ * @f: format
+ */
+
 typedef struct pf
 {
 	char a;
@@ -12,5 +19,12 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int fnchar(va_list arg);
 int fnstring(va_list arg);
+int fnsucc(va_list arg);
+int fnint(va_list arg);
+int fnerror(va_list arg);
+int fnvoid(va_list arg);
+int fnbin(va_list arg);
+int fnoct(int arg);
+int fnrot(va_list arg);
 
 #endif /* MY_PRINTF */
