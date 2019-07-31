@@ -1,12 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdlib.h>
-/**
- * fnstruct - entry point
- * Description: struct for printf
- * @format: formats
- * Return: null
- */
 
 /**
  * fnstruct - Function pointer that return a function
