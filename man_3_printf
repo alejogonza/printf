@@ -1,4 +1,4 @@
-.TH man 3  "28 july 2019" "0.10" "_printf user manual"
+.TH _printf 3  "28 july 2019" "0.10" "_printf user manual"
 .SH NAME
 .br
 .B _printf
