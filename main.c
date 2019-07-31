@@ -133,4 +133,13 @@ int main (void)
 	printf("Expected   : %i\n", 0);
 	_printf("Actual     : %b\n", 0);
 
+	   //b
+        printf("=====================\n");
+        printf("*****OCTAL*****\n");
+        printf("=====================\n");
+	int a;
+	a = 543563;
+	printf("Expected   : %o\n", a);
+	_printf("Actual     : %o\n", a);
 }
+

@@ -24,6 +24,7 @@ int (*fnstruct(char format))(va_list)
 		{'d', fnint},
 		{'i', fnint},
 		{'b', fnbin},
+	        {'o', fnoct},
 		{'\0', fnerror}
 	};
 
