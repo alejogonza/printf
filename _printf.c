@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdlib.h>
-
 /**
  * fnstruct - Function pointer that return a function
  * @format: format of char
@@ -18,6 +17,8 @@ int (*fnstruct(char format))(va_list)
 		{'d', fnint},
 		{'i', fnint},
 		{'b', fnbin},
+		{'r', fnrev},
+		{'R', fnrot},
 		{'\0', fnerror}
 	};
 
