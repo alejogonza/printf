@@ -82,24 +82,26 @@ int fnrot(va_list arg)
 
 int fnrev(va_list arg)
 {
-	char *a;
-	int i, j, count = 0;
 
-	a = va_arg(arg, char *);
+	int ar;
+	int con;
+	char num[] = "(null)";
+	char *string;
 
-	if (a == NULL)
+	string = va_arg(arg, char *);
+
+	ar = 0;
+	if (string == NULL)
 	{
-		a = "(null)";
-		count = 0;
+		for (ar = 0; num[ar] != '\0'; ar++)
+			_putchar(num[ar]);
+		return (6);
 	}
+	con = 0;
+	while (string[con] != '\0')
+		con++;
+	for (ar = con - 1; ar >= 0; ar--)
+		_putchar (string[i]);
+	return (con);
 
-	for (i = 0; a[i] != '\0'; i++)
-		count++;
-
-	for (j = i - 1; j >= 0; j--)
-	{
-		_putchar(a[j]);
-	}
-
-	return (0);
 }
