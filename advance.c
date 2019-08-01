@@ -11,7 +11,9 @@ int fnbin(va_list arg)
 {
 	unsigned int i, j, n, count = 0;
 	unsigned int arr[100];
+
 	n = va_arg(arg, int);
+
 	if (n < 1)
 	{
 		_putchar('0');
@@ -92,7 +94,8 @@ int fnrev(va_list arg)
 
 	a = "(null)";
 
-    while (a[c2] != '\0')
+	while (a[c2] != '\0')
+
 	c2++;
 
 	for (c1 = c2 - 1; c1 >= 0; c1--)
